@@ -13,10 +13,6 @@ XYG Music is a music company who is looking to build an E-commerce web applicati
 The scope of this project is to design and develop a web application that allows users to buy CD through a web based portal. 
 
 ###2. Product Features
-The features have been divided into two categories which are core and extra features
-
-###Core Features 
-
 1. Login for different access level: The system shall be integrated with secure login using Java EE technology. 
 	- Customers: The customers are general users who would like to perform online shopping. They will have general rights and are able shop in the online store.  
 	- Admin access: Admin login shall be given to administrative staff. They are able to add, edit, delete stocks from catalogue and track an order by a customer.  
