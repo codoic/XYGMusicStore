@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="Customer/menu.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="Customer/changeDetails.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="Admin/addUnsuccessful.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="Customer/viewDetails.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="Customer/shoppingUnsuccessful.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="index.jsp" x="650" y="450" zoom="true"/>
+        <Node id="Customer/signupUnsuccessful.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="Customer/passwordupdatesuccess.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="Admin/maintainOrder.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="Customer/login.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="Customer/updatesuccess.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="Admin/newCatalogue.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="Admin/addSuccess.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="Customer/updateUnsuccessful.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="Customer/shooping.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="index.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="Customer/signup.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="Customer/loginUnsuccessful.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="Admin/maintainCatalogue.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="Customer/shoppingsuccess.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="Customer/changePassword.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="Customer/PassUpdateUnsuccessful.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="Admin/index.xhtml" x="400" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

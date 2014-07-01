@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>XYG Customer login</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="XYG Music.Please enter all details to signup.">
+                <p:messages id="msgs"/>
+                <h:panelGrid columns="3">  
+                    <h:outputText value="Name: " />  
+                    <p:inputText id="name" required="true" label="Name" value="#{signupManaged.name}" />  
+                    <p:message for="name" display="icon"/> 
+                    
+                    <h:outputText value="Address: " />  
+                    <p:inputText id="address" required="true" label="Address" value="#{signupManaged.address}" />  
+                    <p:message for="address" display="icon"/> 
+                    
+                    <h:outputText value="Phone: " />  
+                    <p:inputText id="phone" required="true" label="Phone" value="#{signupManaged.phone}" />  
+                    <p:message for="phone" display="icon"/> 
+                    
+                    <h:outputText value="Password: " />  
+                    <p:password id="password" required="true" label="Password" value="#{signupManaged.password}"/>  
+                    <p:message for="password" display="icon"/> 
+                    
+                    <h:outputText value="Security Question to reset password? " />  
+                    <p:inputText id="secquest" required="true" label="secquest" value="#{signupManaged.secquest}" />  
+                    <p:message for="secquest" display="icon"/> 
+                    
+                    <h:outputText value="Security answer:" />  
+                    <p:inputText id="secanswer" required="true" label="secanswer" value="#{signupManaged.secanswer}" />  
+                    <p:message for="secanswer" display="icon"/> 
+                    
+                     <h:outputText value="Email address:" />  
+                     <p:inputText id="email" required="true" label="email" value="#{signupManaged.email}" />  
+                    <p:message for="email" display="icon"/> 
+                    
+                    <h:inputHidden value="some text" />  
+                    <p:commandButton value="Signup"  action="#{signupManaged.signup()}" ajax="false"/>
+                </h:panelGrid>         
+            </p:panel>  
+        </h:form>
+        <p:panel>
+            Already a member.<a href="login.xhtml">Login!</a><br/>
+        </p:panel>
+    </h:body>
+</html>
+
+

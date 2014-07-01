@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Maintain catalogue</title>
+    </h:head>
+    <h:body>
+        <h:form id="form">  
+            <p:panel  header="All Catalogue Items">
+            <p:growl id="messages" showDetail="true"/>  
+
+            <p:dataTable var="catalogue" value="#{catalogueManaged.clist}" id="itemList" editable="true">  
+
+                <f:facet name="header">  
+                    Catalogue Items 
+                </f:facet>  
+
+                <p:ajax event="rowEdit" listener="#{catalogueManaged.onEdit}" update=":form:messages" /> 
+                <p:column>
+                    <f:facet name="header">Delete</f:facet>  
+                    <p:commandButton value="Delete" style="float:right" actionListener="#{catalogueManaged.onDelete(catalogue.catalogueid)}" update=":form"/>
+                </p:column>
+
+                <p:column headerText="ID" style="width:15%">  
+                    <p:cellEditor>  
+                        <f:facet name="output">  
+                            <h:outputText value="#{catalogue.catalogueid}" />  
+                        </f:facet>  
+                        <f:facet name="input">  
+                            <p:inputText value="#{catalogue.catalogueid}" readonly="true" style="width:100%"/>  
+                        </f:facet>  
+                    </p:cellEditor>  
+                </p:column>  
+
+                <p:column headerText="Type" style="width:15%">  
+                    <p:cellEditor>  
+                        <f:facet name="output">  
+                            <h:outputText value="#{catalogue.type}" />  
+                        </f:facet>  
+                        <f:facet name="input">  
+                            <p:selectOneMenu id="type" value="#{catalogue.type}">  
+                                <f:selectItem itemLabel="Jazz" itemValue="Jazz" />   
+                                <f:selectItem itemLabel="Country" itemValue="Country" />
+                                <f:selectItem itemLabel="Trance" itemValue="Trance" />
+                                <f:selectItem itemLabel="HipHop" itemValue="HipHop" /> 
+                                <f:selectItem itemLabel="Pop" itemValue="Pop" />
+                                <f:selectItem itemLabel="Rock" itemValue="Rock" />
+                            </p:selectOneMenu>   
+                        </f:facet>  
+                    </p:cellEditor>  
+                </p:column>  
+
+                <p:column headerText="Artist" style="width:15%">  
+                    <p:cellEditor>  
+                        <f:facet name="output">  
+                            <h:outputText value="#{catalogue.artist}" />  
+                        </f:facet>  
+                        <f:facet name="input">  
+                            <p:inputText value="#{catalogue.artist}" style="width:100%"/>  
+                        </f:facet>  
+                    </p:cellEditor>  
+                </p:column> 
+
+                <p:column headerText="Name" style="width:15%">  
+                    <p:cellEditor>  
+                        <f:facet name="output">  
+                            <h:outputText value="#{catalogue.name}" />  
+                        </f:facet>  
+                        <f:facet name="input">  
+                            <p:inputText value="#{catalogue.name}" style="width:100%"/>  
+                        </f:facet>  
+                    </p:cellEditor>  
+                </p:column> 
+
+                <p:column headerText="Price" style="width:15%">  
+                    <p:cellEditor>  
+                        <f:facet name="output">  
+                            <h:outputText value="#{catalogue.price}" />  
+                        </f:facet>  
+                        <f:facet name="input">  
+                            <p:inputText value="#{catalogue.price}" style="width:100%"/>  
+                        </f:facet>  
+                    </p:cellEditor>  
+                </p:column> 
+
+                <p:column headerText="Quantity" style="width:15%">  
+                    <p:cellEditor>  
+                        <f:facet name="output">  
+                            <h:outputText value="#{catalogue.quantity}" />  
+                        </f:facet>  
+                        <f:facet name="input">  
+                            <p:inputText value="#{catalogue.quantity}" style="width:100%"/>  
+                        </f:facet>  
+                    </p:cellEditor>  
+                </p:column> 
+
+                <p:column style="width:8%">  
+                    <p:rowEditor />  
+                </p:column>  
+
+            </p:dataTable>  
+            </p:panel>
+        </h:form>  
+
+
+    </h:body>
+</html>
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Welcome!</title>
+    </h:head>
+    <h:body>
+        <h:form id="form1">
+
+            <p:panel id="panel1" header="Catalogue Items">
+                <p>Choose items to add in your shooping cart.</p>
+                <p:dataTable value="#{customerManaged.catalogue}" var="catalogue">
+                    <p:column>
+                        <f:facet name="header">Item id</f:facet>  
+                        <h:outputText value="#{catalogue.catalogueid}"/>
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">Album Type</f:facet>  
+                        <h:outputText value="#{catalogue.type}"/>
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">Artist</f:facet>  
+                        <h:outputText value="#{catalogue.artist}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Name</f:facet>  
+                        <h:outputText value="#{catalogue.name}"/>
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">Price</f:facet>  
+                        $<h:outputText value="#{catalogue.price}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Available Quan</f:facet>  
+                        <h:outputText value="#{catalogue.quantity}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Add</f:facet>  
+                        <p:commandButton value="Add to cart" style="float:right" actionListener="#{customerManaged.addCart(catalogue.catalogueid)}" update=":form1"/>
+
+                    </p:column>
+                </p:dataTable>
+               <div align="right">
+                   <p:commandButton value="Empty"  actionListener="#{customerManaged.emptyCart()}" update=":form1:panel2"/>
+                 
+                   <p:commandButton value="Checkout"  action="#{customerManaged.checkout()}" update=":form1"/>
+               </div>
+                  
+             
+            </p:panel>
+
+            <p:panel header="Cart Item" id="panel2">
+                <p:dataTable id="cartlist" value="#{customerManaged.cart}" var="cart">
+                    <p:column>
+                        <f:facet name="header">Item id</f:facet>  
+                        <h:outputText value="#{cart.id}"/>
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">Name</f:facet>  
+                        <h:outputText value="#{cart.name}"/>
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">Price</f:facet>  
+                        $<h:outputText value="#{cart.cost}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Ordered Quantity</f:facet>  
+                        <h:outputText value="#{cart.quantity}"/>
+                    </p:column>
+                    <f:facet name="footer">  
+                        Total cost:$#{customerManaged.cartTotal()}  
+        </f:facet> 
+                </p:dataTable>
+
+            </p:panel>
+
+        </h:form>
+    </h:body>
+</html>
+
+

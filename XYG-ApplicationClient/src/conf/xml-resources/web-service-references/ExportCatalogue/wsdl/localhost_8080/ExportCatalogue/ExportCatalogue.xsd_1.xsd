@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://service.web/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.web/">
+
+<xs:element name="catalogue" type="tns:catalogue"/>
+
+<xs:element name="getCatalogue" type="tns:getCatalogue"/>
+
+<xs:element name="getCatalogueResponse" type="tns:getCatalogueResponse"/>
+
+<xs:complexType name="getCatalogue">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCatalogueResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:catalogue" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="catalogue">
+<xs:sequence>
+<xs:element name="artist" type="xs:string" minOccurs="0"/>
+<xs:element name="catalogueid" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:double" minOccurs="0"/>
+<xs:element name="quantity" type="xs:int" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

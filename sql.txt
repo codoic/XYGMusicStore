@@ -1,0 +1,38 @@
+CREATE table XYG_Customer (
+    CustId          INTEGER NOT NULL 
+                    PRIMARY KEY GENERATED ALWAYS AS IDENTITY 
+                    (START WITH 1, INCREMENT BY 1),
+    Name            VARCHAR(20), 
+    Address         VARCHAR(50),
+    Phone           VARCHAR(20),
+    Password        VARCHAR(26),
+    SecQuestion       VARCHAR(50),
+    SecAnswer    VARCHAR(50), 
+    Email 	  VARCHAR(50) NOT NULL)
+
+CREATE table XYG_Catalogue (
+    CatalogueId          VARCHAR(10) NOT NULL 
+                         PRIMARY KEY,
+    Type                VARCHAR(30), 
+    Artist              VARCHAR(30),
+    Name                 VARCHAR(30),
+    Price               DOUBLE,
+    Quantity            INTEGER);
+
+CREATE table XYG_CustomerOrder
+    (Order_ID INTEGER NOT NULL
+    PRIMARY KEY GENERATED ALWAYS AS IDENTITY 
+    (START WITH 101, INCREMENT BY 1),
+    CustId INTEGER NOT NULL,
+    TotalAmt DOUBLE);
+
+
+CREATE table XYG_LineItems
+    (Line_ID INTEGER NOT NULL
+    PRIMARY KEY GENERATED ALWAYS AS IDENTITY 
+    (START WITH 101, INCREMENT BY 1),
+    ItemId VARCHAR(10) NOT NULL,
+    Quantity INTEGER NOT NULL,
+    Order_ID INTEGER NOT NULL,
+    FOREIGN KEY(Order_ID)
+	REFERENCES XYG_CustomerOrder(Order_ID)); 

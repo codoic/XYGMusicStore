@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>XYG Customer login</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="XYG Music.Please login to buy CD's!">
+                <p:messages id="msgs"/>
+                <h:panelGrid columns="3">  
+                    <h:outputText value="Email id: " />  
+                    <p:inputText id="email" required="true" label="Email" value="#{customerManaged.email}" />  
+                    <p:message for="email" display="icon"/>  
+                    
+                    <h:outputText value="Password: " />  
+                    <p:password id="password" required="true" label="Password" value="#{customerManaged.password}" />  
+                    <p:message for="password" display="icon"/> 
+                    
+                    <p:commandButton value="Reset" type="reset" />  
+                     <p:commandButton value="Login" action="#{customerManaged.login}" ajax="false"/>
+                </h:panelGrid>         
+            </p:panel>  
+        </h:form>
+        <p:panel>
+            Not member yet.<a href="signup.xhtml">Sign up!</a><br/>
+        </p:panel>
+    </h:body>
+</html>
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Change Personal Details</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Please fill up the form to change your details.">
+                <p:messages id="msgs"/>
+                <h:panelGrid columns="3">  
+                    <h:outputText value="Name: " />  
+                    <p:inputText id="name" required="true" label="Name" value="#{customerManaged.name}" />  
+                    <p:message for="name" display="icon"/> 
+                    
+                    <h:outputText value="Address: " />  
+                    <p:inputText id="address" required="true" label="Address" value="#{customerManaged.address}" />  
+                    <p:message for="address" display="icon"/> 
+                    
+                    <h:outputText value="Phone: " />  
+                    <p:inputText id="phone" required="true" label="Phone" value="#{customerManaged.phone}" />  
+                    <p:message for="phone" display="icon"/> 
+                    
+                    <h:outputText value="Security Question? " />  
+                    <p:inputText id="secquest" required="true" label="secquest" value="#{customerManaged.secquestion}" />  
+                    <p:message for="secquest" display="icon"/> 
+                    
+                    <h:outputText value="Security answer:" />  
+                    <p:inputText id="secanswer" required="true" label="secanswer" value="#{customerManaged.secanswer}" />  
+                    <p:message for="secanswer" display="icon"/> 
+                    
+                    
+                    <h:inputHidden value="some text" />  
+                    <p:commandButton value="Change"  action="#{customerManaged.updateDetails()}" ajax="false"/>
+                </h:panelGrid>         
+            </p:panel>  
+        </h:form>
+    </h:body>
+</html>
+
+

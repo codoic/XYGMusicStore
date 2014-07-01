@@ -1,0 +1,1 @@
+sql.txt contains all the query to generate the table for this project. Please generate the table first. 
