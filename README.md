@@ -1,7 +1,7 @@
 XYGMusicStore
 =============
 
-A Java EE based web application that allows online selling. The project demonstrates simple use of Jave EE technology, Glassfish Server and Primefaces framework.  
+A Java EE based web application that allows online selling. The project demonstrates beginner use of Jave EE technology, Glassfish Server and Primefaces framework.  
 
 ###Targeted Audiences
 This project is for beginners learning their first Java EE application. It was done as part of university project for learning - Object Relational Mapping (ORM), Stateless & Stateful Session Beans, java messaging service, web services and Java Server Faces (JSF).     
